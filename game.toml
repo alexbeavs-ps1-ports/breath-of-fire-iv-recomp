@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Breath of Fire IV"
+id = "SLUS-01324"
+players = 1
+exe = "disc/SLUS_013.24"
+disc = "disc/Breath of Fire IV (USA).cue"
+discs = ["disc/Breath of Fire IV (USA).cue"]
+disc_serials = ["SLUS-01324"]
+load_address = "0x800F8800"
+entry_pc = "0x801395A0"
+text_size = "0x00100800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Breath of Fire IV (USA) (Track 1).bin"
+cue_name = "Breath of Fire IV (USA).cue"
+boot_exe = "SLUS_013.24"
+known_sizes = [645066576]
+known_md5 = [
+  "145a7d7ac3469fcb974bbb309ebd61b1",
+]
+known_sha1 = [
+  "24be71b32aeb52a930bc08dccda5db61e904de8a",
+]
+known_crc32 = [
+  "29d0f94c",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Breath of Fire IV Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 2
+required_disc_fp = "554a267c5e530bc7b2a63aadaa5da035bfc4da0d45d7c1ec78f77d53349b1921"

@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "breath-of-fire-iv-psx",
+  "name": "Breath of Fire IV",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "breath-of-fire-iv-recomp",
+  "rom_identity": {
+    "crc32": [
+      "29d0f94c"
+    ],
+    "md5": [
+      "145a7d7ac3469fcb974bbb309ebd61b1"
+    ],
+    "sha1": [
+      "24be71b32aeb52a930bc08dccda5db61e904de8a"
+    ],
+    "disc_serials": [
+      "SLUS-01324"
+    ],
+    "sizes": [
+      645066576
+    ],
+    "filenames": [
+      "Breath of Fire IV (USA).cue",
+      "Breath of Fire IV (USA) (Track 1).bin"
+    ],
+    "track_counts": [
+      2
+    ],
+    "disc_fps": [
+      "554a267c5e530bc7b2a63aadaa5da035bfc4da0d45d7c1ec78f77d53349b1921"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/breath-of-fire-iv-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "breath-of-fire-iv-*-windows-x64.zip",
+      "linux-x64": "breath-of-fire-iv-*-linux-x64.zip",
+      "macos-arm64": "breath-of-fire-iv-*-macos-arm64.zip",
+      "macos-x64": "breath-of-fire-iv-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "breath_of_fire_iv.exe",
+    "linux": "breath_of_fire_iv",
+    "macos": "breath_of_fire_iv"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/breath-of-fire-iv-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}
